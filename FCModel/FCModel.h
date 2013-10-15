@@ -9,6 +9,8 @@
 #import "FMDatabase.h"
 #import "FMDatabaseQueue.h"
 
+#import <Mantle/MTLModel.h>
+
 // These notifications use the relevant model's Class as the "object" for convenience so observers can,
 //  for instance, observe every update to any instance of the Person class:
 //
@@ -28,7 +30,7 @@ typedef NS_ENUM(NSInteger, FCModelSaveResult) {
     FCModelSaveNoChanges
 };
 
-@interface FCModel : NSObject
+@interface FCModel : MTLModel
 
 @property (readonly) id primaryKey;
 @property (readonly) NSDictionary *allFields;
