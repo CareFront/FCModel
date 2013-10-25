@@ -99,6 +99,9 @@ typedef NS_ENUM(NSInteger, FCModelSaveResult) {
 - (void)didUpdate;
 - (void)didDelete;
 
+- (id)encodedValueForFieldName:(NSString *)fieldName;
+- (void)decodeFieldValue:(id)value intoPropertyName:(NSString *)propertyName;
+
 // Called on subclasses if there's a reload conflict:
 //  - The instance changes field X but doesn't save the changes to the database.
 //  - Database updates are executed outside of FCModel that cause instances to reload their data.
